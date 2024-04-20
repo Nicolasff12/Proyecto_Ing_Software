@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,6 +37,9 @@ public class Persona implements Serializable{
 
     @Column(name = "AUT_TIPO", nullable = false)
     private Enum tipo;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "persona", cascade = CascadeType.ALL)
+    private List<Persona> personas;
 
 
 }

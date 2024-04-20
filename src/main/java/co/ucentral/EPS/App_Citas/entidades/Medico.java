@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,5 +25,7 @@ public class Medico implements Serializable{
     private long id;
     @Column(name = "AUT_ESPECIALIDAD", nullable = false)
     private String especialidad;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "medico", cascade = CascadeType.ALL)
+    private List<Medico> medicos;
 
 }
