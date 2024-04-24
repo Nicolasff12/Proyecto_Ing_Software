@@ -25,7 +25,7 @@ public class Medico implements Serializable{
     private long id;
     @Column(name = "AUT_ESPECIALIDAD", nullable = false)
     private String especialidad;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "medico", cascade = CascadeType.ALL)
-    private List<Medico> medicos;
+    //@OneToMany(fetch = FetchType.EAGER, mappedBy = "medico", cascade = CascadeType.ALL)
+    //private List<Medico> medicos;
 
 }

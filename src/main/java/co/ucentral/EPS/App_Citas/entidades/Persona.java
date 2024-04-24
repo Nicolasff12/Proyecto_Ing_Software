@@ -38,8 +38,8 @@ public class Persona implements Serializable{
     @Column(name = "AUT_TIPO", nullable = false)
     private Enum tipo;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "persona", cascade = CascadeType.ALL)
-    private List<Persona> personas;
+    //@OneToMany(fetch = FetchType.EAGER, mappedBy = "persona", cascade = CascadeType.ALL)
+    //private List<Persona> personas;
 
 
 }
