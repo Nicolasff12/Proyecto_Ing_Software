@@ -1,6 +1,7 @@
 package co.ucentral.EPS.App_Citas.servicios;
 
 import co.ucentral.EPS.App_Citas.dto.PersonaDto;
+import co.ucentral.EPS.App_Citas.dto.UsuarioDto;
 import co.ucentral.EPS.App_Citas.entidades.Persona;
 import co.ucentral.EPS.App_Citas.repositorios.RepositorioPersona;
 import lombok.AllArgsConstructor;
