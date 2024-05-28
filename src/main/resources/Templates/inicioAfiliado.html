@@ -1,3 +1,4 @@
+
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
@@ -24,26 +25,30 @@
       <div class="col-md-6 col-md-offset-3">
 
 
-        <h1>Acceso</h1>
+        <h1>Acceso Afiliado</h1>
         <div class="card-body">
-          <form th:action="@{/index}" method="post" th:object="${usuario}">
+          <form th:action="@{/afiliado}" method="post" th:object="${afiliado}">
 
             <div  class="form-text">
-              <label class="control-label" for="nombreCompleto">Usuario</label>
-              <input id="nombreCompleto" type="text"  class="form-control" th:field="*{nombreCompleto}">
+              <label class="control-label" for="cedula">cedula</label>
+              <input id="cedula" type="text"  class="form-control" th:field="*{cedula}">
             </div>
 
             <div id="passwordHelpBlock" class="form-text">
               <!--<label for="inputPassword5" for="idinicio">Password</label>-->
-              <label for="idinicio">Password</label>
-              <input id="idinicio" type="password" class="form-control" aria-describedby="passwordHelpBlock" th:field="*{idinicio}">
+              <label for="contrasenia">Contraseña</label>
+              <input id="contrasenia" type="password" class="form-control" aria-describedby="passwordHelpBlock" th:field="*{contrasenia}">
             </div>
 
-          <br>
-          <br>
+            <br>
+            <br>
 
-          <a type="button" class="btn btn-primary" href="#" th:href="@{/portalAfiliado}">Ingreso</a>
-            </form>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Ingresar</button>
+
+            </div>
+
+          </form>
         </div>
 
       </div>
@@ -54,10 +59,13 @@
     <br>
 
   </div>
-  </div>
-  <script
-          src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-          crossorigin="anonymous"></script>
+</div>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 </html>
+
+	
+	
