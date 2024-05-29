@@ -1,10 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
+    <title>Acceso</title>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
 </head>
 <body>
 
+<br>
+<br>
+
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+
+                <h1>Acceso Medico</h1>
+                <div class="card-body">
+                    <form th:action="@{/medico}" method="post" th:object="${medico}">
+
+                        <div class="form-group">
+                            <label class="form-label fs-3 text-dark" for="cedula"> Cédula </label>
+                            <input id="cedula" type="text" class="form-control" th:field="*{cedula}"
+                                   required autofocus="autofocus">
+                        </div>
+                        <div id="passwordHelpBlock" class="form-text">
+                            <label for="contrasenia">Contraseña</label>
+                            <input id="contrasenia" type="password" class="form-control" aria-describedby="passwordHelpBlock" th:field="*{contrasenia}"
+                                   >
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Ingresar</button>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+
+    </div>
+</div>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,14 +1,18 @@
 package co.ucentral.EPS.App_Citas.dto;
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import co.ucentral.EPS.App_Citas.config.FechaConfig;
+import co.ucentral.EPS.App_Citas.entidades.Afiliado;
+import co.ucentral.EPS.App_Citas.entidades.Especialidad;
+import co.ucentral.EPS.App_Citas.entidades.Medico;
+import co.ucentral.EPS.App_Citas.entidades.Sede;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.text.DateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,11 +20,20 @@ import java.text.DateFormat;
 @ToString
 public class CitaDto implements Serializable{
 
-    private long id;
-    private DateFormat fecha;
-    private String observaciones;
-    private String motivo;
 
+    private int idcita;
+    private String estado;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime fecha;
+    private String fechaFormateada;
+    private LocalTime horaInicio;
+    private Medico medico;
+    private Sede sede;
+    private Especialidad especialidad;
+    private Afiliado afiliado;
 
+    public String getFechaFormateada() {
+        return FechaConfig.convertirFecha(this.fecha);
+    }
 
 }

@@ -1,7 +1,5 @@
 package co.ucentral.EPS.App_Citas.dto;
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import co.ucentral.EPS.App_Citas.entidades.Sede;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,8 +12,11 @@ import java.io.Serializable;
 @ToString
 public class ConsultorioDto implements  Serializable{
 
-    private long id;
-    private int piso;
-    private int numeroConsultorio;
+    private Integer serial;
+    private Integer idConsultorio;
+    private String nombre;
+    private Sede sede;
 
 }
+
+
